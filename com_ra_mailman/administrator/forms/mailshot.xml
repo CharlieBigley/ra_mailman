@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Ramblers\Component\Ra_tools\Administrator\Field">
+  <fieldset addruleprefix="Ramblers\Component\Ra_tools\Administrator\Rule">
+       <field name="id" type="text" default="0" label="ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+        <field
+            name="title"
+            type="textfield"
+            label="Title"
+            description="Title for the mailshot"
+            required="true"
+            class="input-xxlarge"
+            default=""
+            />
+
+        <field
+            name="body"
+            type="editor"
+            label="Content"
+            description="Content of the email"
+            filter="raw"
+            required="true"
+            default=""
+            />
+
+        <field
+            name="date_sent"
+            type="calendar"
+            label="Date sent"
+            description="Date of most recent mailing"
+            default=""
+            readonly="true"
+            />
+        <field
+            name="mail_list_id"
+            type="hidden"
+            label="Mailing list ID"
+            description="id of the mailing list"
+            required="false"
+            />
+        <field
+            name="mail_list_name"
+            type="foreignkey"
+            label="Mailing list"
+            description="name of the mailing list"
+            table="#__ra_mail_lists"
+            key="id"
+            value="CONCAT(group_code, ':', name)"
+            default="" 
+            />
+        <field
+            name="state"
+            type="list"
+            label="Status"
+            description="Active/Deleted"
+            class="inputbox"
+            size="1"
+            default="1"
+            >
+            <option value="1">Active</option>
+            <option value="0">Deleted</option>
+           </field>
+        <field
+            name="attached_file"
+            type="hidden"
+            label="File to be attached"
+            description="Hidden field"
+            default=""
+            />
+        <field
+            name="attachment"
+            type="filelist"
+            directory="images/com_ra_mailman" 
+            label="Attachment"
+            description="Name of the data file you have uploaded"
+       />   
+       <field
+            name="created"
+            type="calendar"
+            label="Created"
+            description="Date created"
+            readonly="true"
+            timeformat="24" 
+            filter="user_utc" 
+            format="%H:%M.%S %d-%m-%Y"   
+            default=""
+            />
+       <field
+            name="created_by"
+            type="user"
+            label="Created by"
+            description="User that created the record"
+            readonly="true"
+            default=""
+            />
+       <field
+            name="modified"
+            type="calendar"
+            label="Updated"
+            readonly="true"
+            timeformat="24" 
+            filter="user_utc" 
+            format="%Y-%m-%d %H:%M.%S"   
+            default=""
+            />
+       <field
+            name="modified_by"
+            type="user"
+            label="Updated by"
+            description="User that last updated the record"
+            readonly="true"
+            default=""
+            />
+  </fieldset>
+</form>

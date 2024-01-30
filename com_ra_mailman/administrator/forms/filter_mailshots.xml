@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" description="Search"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="Status"
+               description="Active or Inactive"
+               onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        
+
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_RA_MAILMAN_LIST_FULL_ORDERING"
+               description="COM_RA_MAILMAN_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+
+            <option value="a.date_sent ASC">Date sent Ascending</option>
+            <option value="a.date_sent DESC">Date sent Descending</option>
+            <option value="a.title ASC">Title Ascending</option>
+            <option value="a.title DESC">Title Descending</option>
+            <option value="mail_list.name ASC">Mail list Ascending</option>
+            <option value="mail_list.name DESC">Mail list Descending</option>
+            <option value="a.modified ASC">Last updated Ascending</option>
+            <option value="a.modified DESC">Last updated Descending</option>
+
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_RA_MAILMAN_LIST_LIMIT"
+               description="COM_RA_MAILMAN_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+
+</form>

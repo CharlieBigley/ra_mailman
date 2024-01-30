@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" description="Search"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="Status"
+               description="Active or Inactive"
+               onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        
+
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_RA_MAILMAN_LIST_FULL_ORDERING"
+               description="COM_RA_MAILMAN_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.group_code ASC">Group Ascending</option>
+            <option value="a.group_code DESC">Group Descending</option>
+            <option value="a.name ASC">List Ascending</option>
+            <option value="a.name DESC">List Descending</option>
+            <option value="g.name ASC">Owner Ascending</option>
+            <option value="g.name DESC">Owner Descending</option>
+            // Reverse sort
+            <option value="a.record_type DESC">Type Ascending</option>
+            <option value="a.record_type ASC">Type Descending</option>
+            <option value="a.home_group_only ASC">Home only Ascending</option>
+            <option value="a.home_group_only DESC">Home only Descending</option>
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_RA_MAILMAN_LIST_LIMIT"
+               description="COM_RA_MAILMAN_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+    </fields>
+</form>

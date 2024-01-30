@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset 
+    addfieldprefix="Ramblers\Component\Ra_tools\Administrator\Field"
+    addruleprefix="Ramblers\Component\Ra_tools\Administrator\Rule"
+  > 
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="id" type="text" default="0" label="Internal ID"
+        readonly="true"
+        class="readonly"
+        description="JGLOBAL_FIELD_ID_DESC"
+    />
+    <field
+        name="name"
+        type="textfield"
+        label="List name"
+        description="Name of the list"
+        class ="input-xxlarge"
+        required="true"
+        default=""
+    />
+    <field
+        name="group_code"
+        type="textfield"
+        label="Group code"
+        description="Group code, Area code , or NAT for a national list"
+        validate="Areagroupcode"
+        required="true"
+        default=""
+    />
+    <field
+        name="group_primary"
+        type="hidden"
+        label="Primary Group code"
+        description="Group code for which this the primary list"
+        required="false"
+        default=""
+    />
+    <field
+        name="owner_id"
+        type="user"
+        required="true"
+        label="Owner"
+        description="User who owns the list"
+        default=""
+    />
+
+    <field
+        name="record_type"
+        type="radio"
+        label="List type"
+        description="If Closed, only an Administrator can create subscriptions "
+        class="btn-group btn-group-yesno"
+        required="true"
+        default="O"
+        >
+        <option value="O">Open</option>
+        <option value="C">Closed</option>
+    </field>
+    <field
+        name="home_group_only"
+        type="radio"
+        label="Home group only"
+        description="If ticked, only members of the home group may register"
+        class="btn-group btn-group-yesno"
+        default="0"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+    </field>
+
+    <field
+        name="chat_list"
+        type="radio"
+        label="Chat list"
+        description="If set, each member can send emails to all other members"
+        class="btn-group btn-group-yesno"
+        default="0"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+    </field>
+    <field
+        name="footer"
+        type="textfield"
+        label="List footer"
+        description="Text to be shown at the end of each message"
+        class="input-xxlarge"
+        required="true"
+        default="Please reply to"
+        />
+    <field
+        name="state"
+        type="list"
+        label="Status"
+        description="Active/Inactive"
+        class="inputbox"
+        size="1"
+        default="1"
+        >
+        <option value="1">Active</option>
+        <option value="0">Inactive</option>
+    </field>
+    <field
+        name="created"
+        type="calendar"
+        label="Created"
+        description="Date created"
+        readonly="true"
+        timeformat="24"
+        filter="user_utc"
+        format="%Y-%m-%d %H:%M.%S"
+        default=""
+    />
+    <field
+        name="created_by"
+        type="user"
+        label="Created by"
+        description="User that created the record"
+        readonly="true"
+        default=""
+        />
+    <field
+        name="modified"
+        type="calendar"
+        label="Updated"
+        description="Date of last update"
+        readonly="true"
+        timeformat="24"
+        filter="user_utc"
+        format="%Y-%m-%d %H:%M.%S"
+        default=""
+        />
+    <field
+        name="modified_by"
+        type="user"
+        label="Updated by"
+        description="User that last updated the record"
+        readonly="true"
+        default=""
+        />
+</fieldset>
+</form>

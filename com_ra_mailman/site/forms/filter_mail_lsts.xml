@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" hint="COM_RA_MAILMAN_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        
+
+    </fields>
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_RA_MAILMAN_LIST_FULL_ORDERING"
+               description="COM_RA_MAILMAN_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.group_code ASC">Group code Ascending</option>
+            <option value="a.group_code DESC">Group code Descending</option>
+            <option value="a.name ASC">List Name Ascending</option>
+            <option value="a.name DESC">List Name Descending</option>
+            <option value="g.name ASC">Owner Ascending</option>
+            <option value="g.name DESC">Owner Descending</option>
+            <option value="a.record_type ASC">Type Ascending</option>
+            <option value="a.record_type DESC">Type Descending</option>
+            <option value="a.home_group_only ASC">Home group only Ascending</option>
+            <option value="a.home_group_only DESC">Home group only Descending</option>
+            <!-- option value="a.state ASC">Status Ascending</option>
+            <option value="a.state DESC">Status Descending</option -->
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_RA_MAILMAN_LIST_LIMIT"
+               description="COM_RA_MAILMAN_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+</form>

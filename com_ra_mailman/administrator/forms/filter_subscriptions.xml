@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" 
+               type="text" 
+               description="Submit"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="Status"
+               description="Active or Inactive"
+               onchange="this.form.submit();"
+        >
+            <option value="">Select status</option>
+            <option value="0">Inactive</option>
+            <option value="1">Active</option>
+        </field>
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="Order by"
+               description="Full ordering"
+               onchange="this.form.submit();"
+               default="l.group_code ASC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="l.group_code ASC">Group Ascending</option>
+            <option value="l.group_code DESC">Group Decending</option>
+            <option value="l.name ASC">Mailing list Ascending</option>
+            <option value="l.name DESC">Mailing list Decending</option>
+            <option value="u.name ASC">Subscriber Ascending</option>
+            <option value="u.name DESC">Subscriber Decending</option>
+            <option value="m.name ASC">Method Ascending</option>
+            <option value="m.name DESC">Method Decending</option>
+            <!--// N.B. database values are 0 and 1, so have to reverse sort -->
+            <option value="a.state DESC">Status Ascending</option>
+            <option value="a.state ASC">Status Decending</option>
+            <option value="a.modified ASC">Last updated Ascending</option>
+            <option value="a.modified DESC">Last updated Decending</option>
+            <option value="a.expiry_date ASC">Expiry date Ascending</option>
+            <option value="a.expiry_date DESC">Expiry date Descending</option>
+            <option value="a.ip_address ASC">IP Address Ascending</option>
+            <option value="a.ip_address DESC">IP Address Decending</option>
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_RA_MAILMAN_LIST_LIMIT"
+               description="COM_RA_MAILMAN_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+
+</form>
