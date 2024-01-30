@@ -11,6 +11,7 @@
      16/10/23 CB remove folder MailMan
      13/10/23 CB correction for canDo
      20/11/23 CB correct mail_lists /group_primary
+     30/01/24 CB version 4.1.0, add site/languages and administrator/languages
 -->
 <extension type="component" version="4.0" method="upgrade">
     <name>RA MailMan</name>
@@ -21,12 +22,13 @@
     <author>Charlie Bigley</author>
     <authorEmail>webmaster@bigley.me.uk</authorEmail>
     <authorUrl>https://docs.stokeandnewcastleramblers.org.uk</authorUrl>
-    <version>4.0.13</version>
+    <version>4.1.0</version>
     <description>Support for Mailing lists</description>
     <namespace path="src">Ramblers\Component\Ra_mailman</namespace>
     <scriptfile>script.php</scriptfile>
     <files folder="site">
         <folder>forms</folder>
+        <folder>languages/folder>
         <folder>src</folder>
         <folder>tmpl</folder> 
         <filename>ra_renewals.php</filename>   
@@ -43,6 +45,7 @@
         </submenu>
         <files folder="administrator">
             <folder>forms</folder>
+            <folder>languages/folder>
             <folder>services</folder>
             <folder>sql</folder>
             <folder>src</folder>
